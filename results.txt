@@ -1,0 +1,16 @@
+
+[0m[0m
+[0m  Insert Poll Test[0m
+  [32m  ✓[0m[90m should insert a new poll with random polltext and some userId:user1[0m[31m (249ms)[0m
+Some Error Occurred! Try Again
+  [32m  ✓[0m[90m should not insert a new option in the above poll user1[0m
+  [32m  ✓[0m[90m should insert one more option in the above poll user1[0m[33m (51ms)[0m
+  [32m  ✓[0m[90m should insert one more option in the above poll user2[0m
+  [32m  ✓[0m[90m should insert one vote in the above poll[0m
+  [32m  ✓[0m[90m should insert a new poll with random polltext and some userId:user2[0m[33m (63ms)[0m
+  [32m  ✓[0m[90m should remove the above TestPoll1 poll[0m
+  [32m  ✓[0m[90m should retrieve all the polls and that poll will be only one[0m[33m (51ms)[0m
+
+
+[92m [0m[32m 8 passing[0m[90m (717ms)[0m
+

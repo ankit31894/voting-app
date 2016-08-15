@@ -1,0 +1,11 @@
+<div class="row header ptb5">
+    <h1 class="col-sm-8 col-sm-offset-1 mtb20"><a href="/"><%= appName %></a></h1>
+    <div class="col-sm-3 text-center ptb20">
+        <%if (!logged) { %>
+        <a href="/login/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Login/Signup</a>
+        <% } else { %>
+                <a href="/mypolls" class="btn btn-info btn-sm">My Polls</a>
+                <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,cAAc;AACd,0DAA0D;AAC1D,MAAM;EACE,KAAK,EAAE,eAAe;EACtB,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,eAAe",
+"sources": ["poll.scss"],
+"names": [],
+"file": "poll.css"
+}

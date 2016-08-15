@@ -1,0 +1,92 @@
+a {
+  text-decoration: none !important;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+/* taken from https://css-tricks.com/snippets/css/sticky-footer/*/
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 142px;
+}
+
+.site-footer {
+  background: orange;
+}
+
+.transitioned {
+  webkit-transition: all 0.2s linear;
+  -kthtml-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.ptb30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.ptb10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.colfff {
+  color: #fff;
+}
+
+.bg000 {
+  background: #000;
+}
+
+.ptb5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mtb20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ptb15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.ptb20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header {
+  background: #902000;
+  color: #fff;
+}
+
+.heee:hover {
+  background-color: #eee;
+}
+
+/*# sourceMappingURL=main.css.map */

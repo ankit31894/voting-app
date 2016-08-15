@@ -1,0 +1,25 @@
+<div ng-if="_getPoll">Loading</div>
+<div ng-if="E_getPoll">{{E_getPoll}} <a href="#" ng-click="getPoll()">Try Again</a></div>
+<div ng-if="_getLoggedStatus">Checking Logged In Status</div>
+<div ng-if="E_getLoggedStatus">{{E_getLoggedStatus}} <a href="#" ng-click="getLoggedStatus()">Try Again</a></div>
+
+
+
+ <form ng-if="logged" ng-submit="submitOption()" class="ptb15">
+   <input name="poll" ng-model="formData.optionText" placeholder="Add New Option" class="col-xs-10 ptb10">
+   <button type="submit" class="col-xs-2 ptb10">Submit</button>
+   <div ng-if="_submitOption">Submitting...</div>
+   <div ng-if="errorOnSubOpt">{{E_submitOption}} <a href="#" ng-click="submitOption()">Try Again</a></div>
+ </form>
+
+ <form ng-submit="insertVote()" ng-if="options.length!==0" class="pollVote col-xs-12 ptb15 text-center bg-info">
+     <select ng-model="selected.option" ng-options="k as k.optionText for k in options" class="col-xs-12 ptb5 mtb20" >
+     </select>
+     <button type="submit">Vote</button>
+     <div ng-if="_insertVote">Loading</div>
+     <div ng-if="E_insertVote">{{E_insertVote}} <a href="#" ng-click="insertVote()">Try Again</a></div>
+ </form>
+
+<div class="col-xs-offset-3 col-xs-6 text-center">
+ <canvas id="myChart" ></canvas>
+</div>
