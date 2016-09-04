@@ -10,7 +10,7 @@
   <a class="col-xs-1 ptb15 text-center transitioned heee" ng-click="share($event)" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
   	<i class="fa fa-facebook"></i>
 	</a>
-<a class="col-xs-1 ptb15 text-center transitioned heee" title="Twitter" href="https://twitter.com/share?text={{value.pollText}}&url=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
+<a class="col-xs-1 ptb15 text-center transitioned heee" ng-click="share($event)" title="Twitter" href="https://twitter.com/share?text={{value.pollText}}&url=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
     <i class="fa fa-twitter"></i>
 </a>
   <div ng-if="_removePoll">Loading</div>
