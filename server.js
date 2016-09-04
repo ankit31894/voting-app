@@ -1,3 +1,5 @@
+//code taken from https://github.com/scotch-io/easy-node-authentication/ with tweaks
+
 // server.js
 
 // set up ======================================================================
@@ -30,7 +32,7 @@ app.use(bodyParser()); // get information from html forms
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static(__dirname + '/public'));
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'aldifuualinfgags' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
