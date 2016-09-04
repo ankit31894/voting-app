@@ -42,7 +42,7 @@ describe('Insert Poll Test', function() {
             done();
         }},th(done));
     });
-    it('should insert one more option in the above poll user1', function(done) {
+    it('should insert one option in the above poll user1', function(done) {
         optionInserter.insertNew({body:{pollId:pollId,optionText:"Test Option1"},user:{id:"57aa645a655cea8f34f54a65"}},{json:function(record){
             record.options.length.should.eql(1);
             record.options[0].optionText.should.eql("Test Option1");
@@ -65,15 +65,43 @@ describe('Insert Poll Test', function() {
             done();
         }},th(done));
     });
+
+
     it('should insert a new poll with random polltext and some userId:user2', function(done) {
         inserter.insertNew({user:{id:"57aa645a655cea8f34f54a69"},body:{pollText:"Test Poll2"}},{json:function(record){
             record.pollText.should.eql("Test Poll2");
             record.userId.should.eql("57aa645a655cea8f34f54a69");
+			pollId=record._id;
+			console.log("...Hello...");			
+
+            done();
+        }},th(done));
+    });
+    it('should insert one option in the above poll', function(done) {
+        optionInserter.insertNew({body:{pollId:pollId,optionText:"Test Option2"},user:{id:"57aa645a655cea8f34f54a69"}},{json:function(record){
+            record.options.length.should.eql(1);
+            record.options[0].optionText.should.eql("Test Option2");
+            optId2=record._id;
+            done();
+        }},th(done));
+    });
+    it('should retrieve all the polls and that poll will be two', function(done) {
+        getter.getAll({},{json:function(record){
+            record.length.should.eql(2);
+            console.log(JSON.stringify(record));
+            record[0].pollText.should.eql("Test Poll1");
+            record[0].userId.should.eql("57aa645a655cea8f34f54a65");
+            done();
+        }},th(done));
+    });
+    it('should insert one vote in the above poll', function(done) {
+        voteInserter.insertNew({body:{optionId:optId2},user:{id:"57aa645a655cea8f34f54a65"}},{json:function(record){
+            record.ok.should.eql(1);
             done();
         }},th(done));
     });
     it('should remove the above TestPoll1 poll', function(done) {
-        Remover.deleteById({params:{string:pollId},user:{id:"57aa645a655cea8f34f54a65"}},{json:function(record){
+        Remover.deleteById({params:{string:pollId},user:{id:"57aa645a655cea8f34f54a69"}},{json:function(record){
             record.result.ok.should.eql(1);
             done();
         }},th(done));
@@ -82,8 +110,8 @@ describe('Insert Poll Test', function() {
     it('should retrieve all the polls and that poll will be only one', function(done) {
         getter.getAll({},{json:function(record){
             record.length.should.eql(1);
-            record[0].pollText.should.eql("Test Poll2");
-            record[0].userId.should.eql("57aa645a655cea8f34f54a69");
+            record[0].pollText.should.eql("Test Poll1");
+            record[0].userId.should.eql("57aa645a655cea8f34f54a65");
             pollId=record._id;
             done();
         }},th(done));

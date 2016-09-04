@@ -9,6 +9,7 @@ mainApp.controller('MainController', function($scope,$http,myhttp) {
           url:'/polls',method:'GET'
       }).then(function(d){
           $scope.polls=d;
+console.log(d);
       },function(err){
           $scope.E_getPolls=err;
       }).finally(function(){

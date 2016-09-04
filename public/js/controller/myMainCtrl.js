@@ -23,14 +23,22 @@ mainApp.controller('MyMainController', function($scope,$http,myhttp) {
         method:'POST'
     }).then(
         function(data,status){
-        delete $scope.polls[key];
+        $scope.polls.splice(key,1);
     },function(err){
         $scope.E_removePoll=err;
     }).finally(function(){
         $scope._removePoll=false;
 
     });
-};
+  };
+
+  $scope.share=function($event){
+      $event.preventDefault();
+      var $this=$event.currentTarget;
+      window.open($this.href, $this.title,'width=500,height=300');
+      return false;
+  };
+
 
   ($scope.getLoggedStatus=function(){
       $scope._getLoggedStatus=true;

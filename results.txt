@@ -1,16 +1,21 @@
 
 [0m[0m
 [0m  Insert Poll Test[0m
-  [32m  ✓[0m[90m should insert a new poll with random polltext and some userId:user1[0m[31m (249ms)[0m
+  [32m  ✓[0m[90m should insert a new poll with random polltext and some userId:user1[0m[31m (187ms)[0m
 Some Error Occurred! Try Again
   [32m  ✓[0m[90m should not insert a new option in the above poll user1[0m
-  [32m  ✓[0m[90m should insert one more option in the above poll user1[0m[33m (51ms)[0m
+  [32m  ✓[0m[90m should insert one option in the above poll user1[0m
   [32m  ✓[0m[90m should insert one more option in the above poll user2[0m
   [32m  ✓[0m[90m should insert one vote in the above poll[0m
-  [32m  ✓[0m[90m should insert a new poll with random polltext and some userId:user2[0m[33m (63ms)[0m
+...Hello...
+  [32m  ✓[0m[90m should insert a new poll with random polltext and some userId:user2[0m
+  [32m  ✓[0m[90m should insert one option in the above poll[0m
+[{"_id":"57b8e10e65825f9713afcb38","pollText":"Test Poll1","userId":"57aa645a655cea8f34f54a65","__v":0,"options":[{"userId":"57aa645a655cea8f34f54a65","optionText":"Test Option1","_id":"57b8e10e65825f9713afcb39","votes":[],"createdAt":"2016-08-20T23:00:30.563Z"},{"userId":"57aa645a655cea8f34f54a69","optionText":"Test Option2","_id":"57b8e10e65825f9713afcb3a","votes":[],"createdAt":"2016-08-20T23:00:30.567Z"}],"createdAt":"2016-08-20T23:00:30.374Z"},{"_id":"57b8e10e65825f9713afcb3c","pollText":"Test Poll2","userId":"57aa645a655cea8f34f54a69","__v":0,"options":[{"userId":"57aa645a655cea8f34f54a69","optionText":"Test Option2","_id":"57b8e10e65825f9713afcb3d","votes":[],"createdAt":"2016-08-20T23:00:30.577Z"}],"createdAt":"2016-08-20T23:00:30.574Z"}]
+  [32m  ✓[0m[90m should retrieve all the polls and that poll will be two[0m
+  [32m  ✓[0m[90m should insert one vote in the above poll[0m
   [32m  ✓[0m[90m should remove the above TestPoll1 poll[0m
-  [32m  ✓[0m[90m should retrieve all the polls and that poll will be only one[0m[33m (51ms)[0m
+  [32m  ✓[0m[90m should retrieve all the polls and that poll will be only one[0m
 
 
-[92m [0m[32m 8 passing[0m[90m (717ms)[0m
+[92m [0m[32m 11 passing[0m[90m (241ms)[0m
 

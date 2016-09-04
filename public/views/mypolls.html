@@ -1,12 +1,18 @@
 <div ng-if="_getPolls">Loading</div>
 <div ng-if="errorOnPoll">{{E_getPolls}} <a href="#" ng-click="getPolls()">Try Again</a></div>
 <div ng-repeat="(key, value) in polls" class="col-sm-offset-1 col-sm-10">
-  <a href="/poll/{{value._id}}" class="col-xs-12 ptb15 text-center transitioned heee">
+  <a href="/poll/{{value._id}}" class="col-xs-9 ptb15 text-center transitioned heee">
     {{value.pollText}}
   </a>
-  <span ng-click="removePoll(value._id,key)" class="col-xs-12 ptb15 text-center transitioned heee">
-    Remove Poll
+  <span ng-click="removePoll(value._id,key)" class="col-xs-1 ptb15 text-center transitioned heee">
+    <i class="fa fa-trash"></i>
   </span>
+  <a class="col-xs-1 ptb15 text-center transitioned heee" ng-click="share($event)" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
+  	<i class="fa fa-facebook"></i>
+	</a>
+<a class="col-xs-1 ptb15 text-center transitioned heee" title="Twitter" href="https://twitter.com/share?text={{value.pollText}}&url=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
+    <i class="fa fa-twitter"></i>
+</a>
   <div ng-if="_removePoll">Loading</div>
   <div ng-if="E_removePoll">{{E_removePoll}} <a href="#" ng-click="removePoll(value_.id,key)">Try Again</a></div>
 

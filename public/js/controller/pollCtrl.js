@@ -20,6 +20,7 @@ poll.controller('PollController',['$scope','$http','$routeParams','myhttp', func
         function(data,status){
             if(data==null)return;
             $scope.options=data.options;
+            console.log(data);
             $scope.selected.option=$scope.options[0];
             c();
         },function(err){
