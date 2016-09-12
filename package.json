@@ -12,11 +12,8 @@
     "method-override": "*",
     "mongoose": "*",
     "morgan": "*",
-    "passport": "*",
-    "passport-facebook": "*",
-    "passport-google-oauth": "*",
-    "passport-local": "*",
-    "passport-twitter": "*"
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0"
   },
   "scripts": {
     "test": "mocha"
