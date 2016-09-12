@@ -1,0 +1,36 @@
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+//objects for reusable code
+//components for BEM Blocks
+//resets for resetting the natural styles if needed
+@import "resets/_reset.scss";
+@import "objects/_general.scss";
+@import "components/_header.scss";
+@import "components/_content.scss";
+@import "components/_sidebar.scss";
+@import "components/_footer.scss";
+
+/* taken from https://css-tricks.com/snippets/css/sticky-footer/*/
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+  background: #EFEFEF;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}

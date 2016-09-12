@@ -1,0 +1,19 @@
+a,a:hover{
+    text-decoration: none;
+    color:#000;
+    transition: ease-in 0.2s;
+}
+a:hover{
+    color:#666;
+}
+ol, ul {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+html, body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}

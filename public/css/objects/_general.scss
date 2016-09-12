@@ -1,0 +1,128 @@
+@mixin mt($v) {
+    .mt#{$v} {
+        margin-top:$v+px;
+    }
+}
+@mixin mb($v) {
+    .mb#{$v} {
+        margin-bottom:$v+px;
+    }
+}
+@mixin mtb($v) {
+    .mtb#{$v} {
+        margin-top:$v+px;
+        margin-bottom:$v+px;
+    }
+}
+@mixin mlr($v) {
+    .mlr#{$v} {
+        margin-left:$v+px;
+        margin-right:$v+px;
+    }
+}
+@mixin ml($v) {
+    .ml#{$v} {
+        margin-left:$v+px;
+    }
+}
+@mixin mr($v) {
+    .mr#{$v} {
+        margin-right:$v+px;
+    }
+}
+@mixin pt($v) {
+    .pt#{$v} {
+        padding-top:$v+px;
+    }
+}
+@mixin pb($v) {
+    .pb#{$v} {
+        padding-bottom:$v+px;
+    }
+}
+@mixin ptb($v) {
+    .ptb#{$v} {
+        padding-top:$v+px;
+        padding-bottom:$v+px;
+    }
+}
+@mixin plr($v) {
+    .plr#{$v} {
+        padding-left:$v+px;
+        padding-right:$v+px;
+    }
+}
+@mixin pl($v) {
+    .pl#{$v} {
+        padding-left:$v+px;
+    }
+}
+@mixin pr($v) {
+    .pr#{$v} {
+        padding-right:$v+px;
+    }
+}
+
+a{
+    text-decoration: none !important;
+}
+html{
+    height:100%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    height:100%;
+}
+.colfff{
+  color:#fff;
+}
+.coleee,.colfff:hover{
+  color:#eee;
+}
+.colddd,.coleee:hover{
+  color:#ddd;
+}
+.colccc,.colddd:hover{
+  color:#ccc;
+}
+.col999,.colccc:hover{
+  color:#999;
+}
+.col666,.col999:hover,.col000:hover{
+  color:#666;
+}
+.col333,.col666:hover{
+  color:#333;
+}
+.col000{
+  color:#000;
+}
+.match-my-cols {
+    overflow: hidden;
+    >[class*="col-"]{
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+    }
+}
+
+@include mt(0);
+@include mt(15);
+@include mt(30);
+@include mb(15);
+@include mb(30);
+@include ml(15);
+@include pt(0);
+@include pt(15);
+@include pt(30);
+@include pt(50);
+@include pb(15);
+@include pb(30);
+@include ptb(50);
+@include ptb(30);
+@include ptb(15);
+@include plr(15);
+@include mtb(15);
+@include mtb(30);
+@include ptb(100);
+@include ptb(15);
+@include ptb(20);

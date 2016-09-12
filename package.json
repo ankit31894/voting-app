@@ -23,10 +23,13 @@
   },
   "devDependencies": {
     "angular": "^1.5.8",
+    "autoprefixer": "^6.4.1",
     "grunt": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-watch": "*",
+    "grunt-cssnano": "^2.1.0",
     "grunt-mocha-test": "^0.12.7",
+    "grunt-postcss": "^0.8.0",
     "jasmine-core": "*",
     "karma": "*",
     "karma-jasmine": "*",

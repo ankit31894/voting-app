@@ -1,19 +1,22 @@
 <div ng-if="_getPolls">Loading</div>
 <div ng-if="errorOnPoll">{{E_getPolls}} <a href="#" ng-click="getPolls()">Try Again</a></div>
-<div ng-repeat="(key, value) in polls" class="col-sm-offset-1 col-sm-10">
-  <a href="/poll/{{value._id}}" class="col-xs-9 ptb15 text-center transitioned heee">
-    {{value.pollText}}
-  </a>
-  <span ng-click="removePoll(value._id,key)" class="col-xs-1 ptb15 text-center transitioned heee">
-    <i class="fa fa-trash"></i>
-  </span>
-  <a class="col-xs-1 ptb15 text-center transitioned heee" ng-click="share($event)" title="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
-  	<i class="fa fa-facebook"></i>
-	</a>
-<a class="col-xs-1 ptb15 text-center transitioned heee" ng-click="share($event)" title="Twitter" href="https://twitter.com/share?text={{value.pollText}}&url=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
-    <i class="fa fa-twitter"></i>
-</a>
-  <div ng-if="_removePoll">Loading</div>
-  <div ng-if="E_removePoll">{{E_removePoll}} <a href="#" ng-click="removePoll(value_.id,key)">Try Again</a></div>
-
-</div>
+<section ng-repeat="(key, value) in polls" class="col-sm-3 col-md-2 polls-grid">
+    <a href="/poll/{{value._id}}" class="polls-grid__box mtb15">
+        <div class="polls-grid__title mb15">
+            {{value.pollText}}
+        </div>
+        <div ng-pluralize class="polls-grid__details small " count="value.noOfOptions"
+            when="{'0': '0 Choices',
+            'one': '1 Choice',
+            'other': '{} Choices'}">
+        </div>
+        <div ng-pluralize  class="polls-grid__details small mb15" count="value.noOfVotes"
+                 when="{'0': 'Nobody Voted! Why dont you?',
+                     'one': '1 person has voted',
+                     'other': '{} people have already voted'}">
+        </div>
+        <div class="polls-grid__details polls-grid__details--date pt15 small">
+            {{value.createdAt | date : "dd MMM, yyyy"}}
+        </div>
+    </a>
+</section>

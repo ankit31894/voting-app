@@ -14,6 +14,7 @@ module.exports={
         var nPoll=new Poll(data);
         nPoll.save(function(err){
           if(err)return next("Unknown Error!");
+          nPoll.mod=1;
           res.json(nPoll);
         });
     }

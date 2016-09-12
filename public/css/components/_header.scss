@@ -1,0 +1,150 @@
+.header {
+    overflow: auto;
+    /* CSS declarations for `.block` */
+    @include element('sections'){
+        fill:rgba(0,0,0,1);
+        transition:all 0.25s;
+        opacity:0;
+        transform:rotate(60deg);
+        transform-origin:300px 260px;
+
+    }
+    @include element('hex') {
+        transform-origin:50% 50%;
+        transition:all 0.25s;
+        transition-timing-function:ease;
+        fill:#ddd;
+        stroke:rgba(0,0,0,0.1);
+        stroke-width:5;
+    }
+    @include element('logo') {
+        transition:all 0.15s;
+        transform:scale(1);
+        transform-origin:300px 260px;
+
+    }
+    @include element('labels') {
+        font-family:sans-serif;
+        font-size:30px;
+        fill:rgba(0,0,0,0.5);
+        transform-origin:300px 260px;
+        transform:scale(0.5);
+        opacity:0;
+        transition:all 0.25s;
+        transition-delay:0.1s;
+    }
+    @include element('link') {
+        transition:all 0.25s;
+        opacity:0;
+
+        @include modifier('1'){
+            transform:translate(300px, 60px);
+        }
+        @include modifier('2'){
+            transform:translate(475px, 165px) rotate(60deg);
+        }
+        @include modifier('3'){
+            transform:translate(470px, 360px) rotate(120deg);
+        }
+        @include modifier('4'){
+            transform:translate(300px, 460px) rotate(180deg);
+        }
+        @include modifier('5'){
+            transform:translate(130px, 360px) rotate(240deg);
+        }
+        @include modifier('6'){
+            transform:translate(130px, 165px) rotate(300deg);
+        }
+    }
+    @include element('section'){
+        animation:fade 1s infinite alternate;
+        fill:rgba(0,0,0,0.1);
+        opacity:0;
+        transition:all 0.25s;
+        @include modifier('1'){
+            opacity:0.4;
+            animation-delay:0.1s;
+        }
+        @include modifier('2'){
+            opacity:0.5;
+            animation-delay:0.2s;
+        }
+        @include modifier('3'){
+            opacity:0.6;
+            animation-delay:0.3s;
+        }
+        @include modifier('4'){
+            opacity:0.7;
+            animation-delay:0.4s;
+
+        }
+        @include modifier('5'){
+            opacity:0.8;
+            animation-delay:0.5s;
+
+        }
+        @include modifier('6'){
+            opacity:0.9;
+            animation-delay:0.6s;
+        }
+    }
+    @include element('button') {
+        cursor:pointer;
+        &:hover{
+            .header{
+                @include element('hex'){
+                    transform:rotate(60deg);
+                    transform:scale(1.2);
+                    fill:#fff;
+                    animation:none;
+                }
+                @include element('logo'){
+                }
+                @include element('labels'){
+                    transform:scale(1);
+                     opacity:1;
+                }
+                @include element('section'){
+                    &:hover{
+                        transform:scale(1);
+                        fill:rgba(0,200,200,0.5);
+                        opacity:1;
+                    }
+                }
+                @include element('sections'){
+                    opacity:1;
+                    transform:scale(2) rotate(60deg);
+                    &:hover{
+                        .header{
+                            @include element('section'){
+                                animation:none;
+                            }
+                        }
+                    }
+                }
+                @include element('link'){
+                    opacity:1;
+                }
+            }
+        }
+    }
+}
+@keyframes fade {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    stroke-width:1;
+    transform:scale(1);
+  }
+  100% {
+    stroke-width:5;
+    transform:scale(1.1);
+  }
+}

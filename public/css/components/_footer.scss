@@ -1,0 +1,10 @@
+.footer, .page-wrap:after {
+  height: 142px;
+}
+
+.footer {
+  background: #000;
+  @include element('link'){
+      color:#ccc;
+  }
+}

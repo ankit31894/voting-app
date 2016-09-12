@@ -8,8 +8,8 @@ mainApp.controller('MainController', function($scope,$http,myhttp) {
       myhttp.fetch({
           url:'/polls',method:'GET'
       }).then(function(d){
+          console.log(d);
           $scope.polls=d;
-console.log(d);
       },function(err){
           $scope.E_getPolls=err;
       }).finally(function(){
@@ -25,7 +25,7 @@ console.log(d);
           if(d=="1")
             $scope.logged=true;
       },function(err){
-        if(err.code!==401)$scope.E_getLoggedStatus="Can't Check whether you are logged In";
+        if(err.status!==401)$scope.E_getLoggedStatus="Can't Check whether you are logged In";
       }).finally(function(){
           $scope._getLoggedStatus=false;
       });
@@ -36,6 +36,8 @@ console.log(d);
       myhttp.fetch({
           url:'/insertpoll',method:'POST',data:$scope.formData
       }).then(function(d){
+          d.noOfVotes=0;
+          d.noOfOptions=0;
           $scope.polls.unshift(d);
       },function(err){
           $scope.E_insertPoll=err;
@@ -45,8 +47,6 @@ console.log(d);
   };
 
 });
-
-
 mainApp.factory('myhttp', function($http,$q) {
 
    return {

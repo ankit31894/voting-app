@@ -4,9 +4,9 @@
     <% include ./head-tag %>
 </head>
 <body class="container-fluid">
-	<div class="page-wrap">
+	<div class="page-wrap row">
 	    <% include ./header %>
-	    <div ng-view style="overflow:auto;"></div>
+	    <main ng-view style="overflow:auto;" class="content"></main>
     </div>
     <% include ./footer %>
 </body>

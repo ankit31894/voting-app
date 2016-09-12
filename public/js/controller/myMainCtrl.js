@@ -69,22 +69,3 @@ mainApp.controller('MyMainController', function($scope,$http,myhttp) {
   };
 
 });
-
-
-mainApp.factory('myhttp', function($http,$q) {
-
-   return {
-        fetch: function(req) {
-            var deferred = $q.defer();
-             //return the promise directly.
-             $http(req)
-               .then(function(result) {
-                    deferred.resolve(result.data)
-                },function(err){
-                    deferred.reject(err.data)
-                });
-            return deferred.promise;
-
-        }
-   }
-});

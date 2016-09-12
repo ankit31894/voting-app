@@ -1,0 +1,28 @@
+.sidebar {
+    /* CSS declarations for `.block` */
+    position: relative;
+    z-index: 5;
+    border-right: solid 1px #ccc;
+    @include element('option') {
+        font-family: 'Rancho', cursive;
+        font-size:40px;
+        font-weight: 800;
+        /* CSS declarations for `.block__element` */
+    }
+    @include element('blog-title-container') {
+        padding: 20px;
+    }
+    @include element('mobile-nav') {
+            line-height: 50px;
+            display: inline-block;
+            background-color: rgba(0,0,0,0.1);
+    }
+
+    @include modifier('bg') {
+        box-shadow:0px 3px 0 0 #a7dbd8;
+        #mc-embedded-subscribe{
+          color:#fff;
+        }
+
+    }
+}

@@ -5,14 +5,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     // home page
     .when('/', {
         templateUrl: 'views/polls.html',
-        controller: 'MainController',
-        css: 'css/polls.css'
+        controller: 'MainController'
    })
 
     .when('/poll/:string', {
         templateUrl: 'views/poll.html',
-        controller: 'PollController',
-        css: 'css/poll.css'
+        controller: 'PollController'
     })
     .when('/login/google', {
         controller : function(){
@@ -22,8 +20,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     })
     .when('/mypolls', {
         templateUrl: 'views/mypolls.html',
-        controller: 'MyMainController',
-        css:'css/polls.css'
+        controller: 'MyMainController'
     })
     .when('/logout', {
         controller : function(){

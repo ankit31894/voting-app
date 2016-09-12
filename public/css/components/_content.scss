@@ -1,0 +1,58 @@
+.polls-grid{
+    @include element('box'){
+        background: #fff;
+        padding:15px;
+        display: block;
+        box-shadow: 1px 1px 6px 6px transparent;
+        &:hover{
+            transition: all 0.5s ease;
+            box-shadow: 1px 1px 6px 6px #bbb;
+        }
+    }
+    @include element('title'){
+        font-family: 'Roboto';
+        display: block;
+        font-weight: bold;
+    }
+    @include element('details'){
+        color:#A1A1A4;
+        @include modifier('date'){
+            border-top: solid 1px #efefef;
+        }
+    }
+    @include element('input'){
+        border:none;
+        &:focus{
+            outline: none;
+        }
+    }
+    @include element('select-container'){
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: #fff;
+
+            background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+    }
+    @include element('select'){
+        padding: 5px 8px;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        &:focus{
+            outline: none;
+        }
+
+    }
+}
+.chart-container{
+    border: solid 1px;
+    border-color:transparent #ccc transparent #ccc;
+}
