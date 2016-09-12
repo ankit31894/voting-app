@@ -15,10 +15,19 @@
               <g class="header__sections">
                 <polygon class="header__section header__section--1" points="300,260 225,130 375,130"></polygon>
                 <polygon class="header__section header__section--2" points="300,260 375,130 450,260"></polygon>
+                <%if (logged) { %><a href="/logout"><% }%>
                 <polygon class="header__section header__section--3" points="300,260 450,260 375,390"></polygon>
+                <%if (logged) { %></a><% }%>
                 <polygon class="header__section header__section--4" points="300,260 375,390 225,390"></polygon>
+
                 <polygon class="header__section header__section--5" points="300,260 225,390 150,260"></polygon>
+                <%if (!logged) { %>
+                    <a href="/login/google">
+                <% } else {%>
+                    <a href="/mypolls">
+                <% } %>
                 <polygon class="header__section header__section--6" points="300,260 150,260 225,130"></polygon>
+                </a>
               </g>
               <g class="header__labels">
                 <text class="header__link header__link--1" text-anchor="middle" x="0" y="0">
@@ -39,8 +48,8 @@
                 <text class="header__link header__link--6" text-anchor="middle" x="0" y="0">
                 </text>
               </g>
-              <polygon class="header__hex" points="450,260 375,390 225,390 150,260 225,130 375,130"></polygon>
               <a href="/">
+              <polygon class="header__hex" points="450,260 375,390 225,390 150,260 225,130 375,130"></polygon>
               <text class="header__logo" x="50%" y="50%" font-size="50" font-family="Rancho" alignment-baseline="middle" text-anchor="middle">
                   <%= appName %>
               </text>

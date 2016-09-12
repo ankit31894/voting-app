@@ -3,7 +3,7 @@
 <div ng-if="_getLoggedStatus">Checking Logged In Status</div>
 <div ng-if="E_getLoggedStatus">{{E_getLoggedStatus}} <a href="#" ng-click="getLoggedStatus()">Try Again</a></div>
 
-    <section class="col-sm-3 col-sm-offset-1 polls-grid">
+    <section class="col-sm-3 polls-grid">
         <form ng-if="logged" ng-submit="submitOption()" class="polls-grid__box mtb15">
             <div class="polls-grid__title mb15">
                 Create Option
@@ -21,7 +21,7 @@
         </form>
     </section>
 
-    <div class=" col-sm-4 text-center chart-container">
+    <div class=" col-sm-6 text-center chart-container">
      <canvas id="myChart" ></canvas>
     </div>
 

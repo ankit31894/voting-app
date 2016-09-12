@@ -1,6 +1,6 @@
 <div ng-if="_getPolls">Loading</div>
 <div ng-if="errorOnPoll">{{E_getPolls}} <a href="#" ng-click="getPolls()">Try Again</a></div>
-<section ng-repeat="(key, value) in polls" class="col-sm-3 col-md-2 polls-grid">
+<section ng-repeat="(key, value) in polls" class="col-sm-3 col-md-3 polls-grid">
     <a href="/poll/{{value._id}}" class="polls-grid__box mtb15">
         <div class="polls-grid__title mb15">
             {{value.pollText}}
