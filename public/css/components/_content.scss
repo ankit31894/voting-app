@@ -16,8 +16,8 @@
     }
     @include element('details'){
         color:#A1A1A4;
-        @include modifier('date'){
-            border-top: solid 1px #efefef;
+        @include modifier('border-bottom'){
+            border-bottom: solid 1px #efefef;
         }
     }
     @include element('input'){

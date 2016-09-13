@@ -18,22 +18,26 @@
     </form>
 </section>
 <section ng-repeat="(key, value) in polls" class="col-sm-3 col-md-3 polls-grid">
-    <a href="/poll/{{value._id}}" class="polls-grid__box mtb15">
-        <div class="polls-grid__title mb15">
-            {{value.pollText}}
-        </div>
-        <div ng-pluralize class="polls-grid__details small " count="value.noOfOptions"
+    <div class="polls-grid__box mtb15">
+        <a href="/poll/{{value._id}}" class="polls-grid__title">
+            <div class=" mb15">
+                {{value.pollText}}
+            </div>
+        </a>
+        <div ng-pluralize class="polls-grid__details small" count="value.noOfOptions"
             when="{'0': '0 Choices',
             'one': '1 Choice',
             'other': '{} Choices'}">
         </div>
-        <div ng-pluralize  class="polls-grid__details small mb15" count="value.noOfVotes"
+        <div ng-pluralize  class="polls-grid__details polls-grid__details--border-bottom small pb15 mb15" count="value.noOfVotes"
                  when="{'0': 'Nobody Voted! Why dont you?',
                      'one': '1 person has voted',
                      'other': '{} people have already voted'}">
         </div>
-        <div class="polls-grid__details polls-grid__details--date pt15 small">
-            {{value.createdAt | date : "dd MMM, yyyy"}}
+        <div class="row">
+            <div class="polls-grid__details small col-xs-8">
+                {{value.createdAt | date : "dd MMM, yyyy"}}
+            </div>
         </div>
-    </a>
+    </div>
 </section>

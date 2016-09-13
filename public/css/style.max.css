@@ -318,8 +318,8 @@ body {
 .polls-grid__details {
   color: #A1A1A4;
 }
-.polls-grid__details--date {
-  border-top: solid 1px #efefef;
+.polls-grid__details--border-bottom {
+  border-bottom: solid 1px #efefef;
 }
 .polls-grid__input {
   border: none;
