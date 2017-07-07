@@ -1,5 +1,5 @@
 {
-  "name": "You-Vote",
+  "name": "You-Poll",
   "main": "server.js",
   "dependencies": {
     "bcrypt-nodejs": "*",
