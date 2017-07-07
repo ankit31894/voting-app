@@ -1,0 +1,61 @@
+<!-- HEADER TAKEN FROM SOMEWHERE
+    i forked it on codepen.io the forked version http://codepen.io/ankit31894/pen/JRYYzJ
+    but it is not my work but I lost the attributes unfortunately
+-->
+
+<div class="header">
+    <div class="header__wrapper col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 ptb30">
+        <svg width="100%" height="100%" viewBox="0 0 600 520">
+          <filter class="header__shadow" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+            <g class="header__button">
+              <g class="header__sections">
+                <polygon class="header__section header__section--1" points="300,260 225,130 375,130"></polygon>
+                <polygon class="header__section header__section--2" points="300,260 375,130 450,260"></polygon>
+                <%if (logged) { %><a href="/logout"><% }%>
+                <polygon class="header__section header__section--3" points="300,260 450,260 375,390"></polygon>
+                <%if (logged) { %></a><% }%>
+                <polygon class="header__section header__section--4" points="300,260 375,390 225,390"></polygon>
+
+                <polygon class="header__section header__section--5" points="300,260 225,390 150,260"></polygon>
+                <%if (!logged) { %>
+                    <a href="/login/google">
+                <% } else {%>
+                    <a href="/mypolls">
+                <% } %>
+                <polygon class="header__section header__section--6" points="300,260 150,260 225,130"></polygon>
+                </a>
+              </g>
+              <g class="header__labels">
+                <text class="header__link header__link--1" text-anchor="middle" x="0" y="0">
+                    <%if (!logged) { %>
+                        <a href="/login/google">Login/Signup</a>
+                    <% } else {%>
+                        <a href="/mypolls">My Polls</a>
+                    <% } %>
+                </text>
+                <text class="header__link header__link--2" text-anchor="middle" x="0" y="0"></text>
+                <text class="header__link header__link--3" text-anchor="middle" x="0" y="0"></text>
+                <text class="header__link header__link--4" text-anchor="middle" x="0" y="0">
+                    <%if (logged) { %>
+                        <a href="/logout">Logout</a>
+                    <% } %>
+                </text>
+                <text class="header__link header__link--5" text-anchor="middle" x="0" y="0"></text>
+                <text class="header__link header__link--6" text-anchor="middle" x="0" y="0">
+                </text>
+              </g>
+              <a href="/">
+              <polygon class="header__hex" points="450,260 375,390 225,390 150,260 225,130 375,130"></polygon>
+              <text class="header__logo" x="50%" y="50%" font-size="50" font-family="Rancho" alignment-baseline="middle" text-anchor="middle">
+                  <%= appName %>
+              </text>
+            </a>
+            </g>
+          <rect class="header__background" x="0" y="0" height="100%" width="100%" fill="url(#pattern)"></rect>
+        </svg>
+    </div>
+</div>

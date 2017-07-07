@@ -3,19 +3,6 @@ module.exports = function(app, passport) {
     // route for home page
     var appDetail=require("../package.json"),
     appName=appDetail.name.replace(/-/g," ");
-    // route for home page
-
-    // route for login form
-    // route for processing the login form
-    // route for signup form
-    // route for processing the signup form
-
-    // route for showing the profile page
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('../public/views/profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
-    });
     app.get('/polls', function(req, res,next) {
         var getter=require("./getpolls.js");
         getter.getAll(req,res,next);
@@ -77,7 +64,7 @@ module.exports = function(app, passport) {
             }));
 
     app.get('*', function(req, res) {
-        res.render('../public/views/index.ejs',{
+        res.render('index.ejs',{
             logged:req.isAuthenticated(),
             appName:appName
         }); // load the index.ejs file

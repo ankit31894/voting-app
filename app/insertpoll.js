@@ -2,6 +2,7 @@
 var Poll = require('./models/polls');
 module.exports={
     insertNew:function(req,res,next){
+		console.log("G");
         if(req.body.pollText.trim()===""){
             var er="Please enter a value";
             er.status=400;

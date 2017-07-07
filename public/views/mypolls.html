@@ -21,7 +21,7 @@
             <div class="polls-grid__details small col-xs-8">
                 {{value.createdAt | date : "dd MMM, yyyy"}}
             </div>
-            <a class="polls-grid__share col-xs-2" ng-click="share($event)" href="https://twitter.com/share?text={{value.pollText}}&url=https://ankit31894-va.herokuapp.com/poll/{{value._id}}">
+            <a class="polls-grid__share col-xs-2" ng-click="share($event)" href="https://twitter.com/share?text={{value.pollText}}&url=https://youpoll.herokuapp.com/poll/{{value._id}}">
                 <i class="fa fa-twitter"></i>
             </a>
             <a class="polls-grid__share col-xs-2" ng-click="removePoll(value._id,value.key)">
