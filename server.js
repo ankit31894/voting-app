@@ -13,13 +13,9 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+process.env.config = process.env.config || 'prod'
 
 var configDB = require('./config/database.js');
-var config = {}
-if (process.argv[2]) {
-  process.env = require(process.argv[2]);
-}
-console.log(process.env)
 var port = process.env.PORT;
 configDB.connect(); // connect to our database
 app.use(bodyParser.json())
